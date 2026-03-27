@@ -46,13 +46,9 @@ if [ ! -e "$BASE_IMAGE" ]; then
     exit 1
 fi
 
-# LINUX_UPDATE_DEB_HEADERS="../linux-headers-5.10.209_5.10.209-*_arm64.deb"
-# LINUX_UPDATE_DEB_IMAGE="../linux-image-5.10.209_5.10.209-*_arm64.deb"
-# LINUX_UPDATE_DEB_LIBC_DEV="../linux-libc-dev_5.10.209-*_arm64.deb"
-
-LINUX_UPDATE_DEB_HEADERS="../linux-headers-6.1.141_6.1.141-*_arm64.deb"
-LINUX_UPDATE_DEB_IMAGE="../linux-image-6.1.141_6.1.141-*_arm64.deb"
-LINUX_UPDATE_DEB_LIBC_DEV="../linux-libc-dev_6.1.141-*_arm64.deb"
+LINUX_UPDATE_DEB_HEADERS="../linux-headers-5.10.209_5.10.209-*_arm64.deb"
+LINUX_UPDATE_DEB_IMAGE="../linux-image-5.10.209_5.10.209-*_arm64.deb"
+LINUX_UPDATE_DEB_LIBC_DEV="../linux-libc-dev_5.10.209-*_arm64.deb"
 
 # 检查三个DEB包是否存在
 if [ ! -e $LINUX_UPDATE_DEB_HEADERS ] || [ ! -e $LINUX_UPDATE_DEB_IMAGE ] || [ ! -e $LINUX_UPDATE_DEB_LIBC_DEV ]; then
@@ -73,9 +69,9 @@ fi
 sudo mkdir -p $TARGET_ROOTFS_DIR/packages
 sudo cp -rpf packages/arm64/* $TARGET_ROOTFS_DIR/packages
 sudo mkdir -p $TARGET_ROOTFS_DIR/packages/linux-deb
-sudo cp ../linux-headers-6.1.141_6.1.141-*_arm64.deb $TARGET_ROOTFS_DIR/packages/linux-deb
-sudo cp ../linux-image-6.1.141_6.1.141-*_arm64.deb $TARGET_ROOTFS_DIR/packages/linux-deb
-sudo cp ../linux-libc-dev_6.1.141-*_arm64.deb $TARGET_ROOTFS_DIR/packages/linux-deb
+sudo cp ../linux-headers-5.10.209_5.10.209-*_arm64.deb $TARGET_ROOTFS_DIR/packages/linux-deb
+sudo cp ../linux-image-5.10.209_5.10.209-*_arm64.deb $TARGET_ROOTFS_DIR/packages/linux-deb
+sudo cp ../linux-libc-dev_5.10.209-*_arm64.deb $TARGET_ROOTFS_DIR/packages/linux-deb
 
 # overlay folder
 sudo cp -rpf overlay/* $TARGET_ROOTFS_DIR/

@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Enable and start network check services
-systemctl enable network-check.service
-systemctl enable network-check.timer
-systemctl start network-check.service
-systemctl start network-check.timer
-
-exit 0
